@@ -11,8 +11,8 @@ provider "aws" {
   # Configuration options
 }
 
-resource "aws_sns_topic" "user_updates" {
-  name              = "user-updates-topic"
-  kms_master_key_id = "enabled"
+resource "aws_sqs_queue" "terraform_queue" {
+  name                              = "terraform-example-queue"
+  kms_master_key_id                 = "enabled"
+ 
 }
-
